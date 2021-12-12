@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Betting Dapp OT4</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Betting Dapp OT4</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+      <div class="row-12 mx-4">
+        <div class="col-6">
+          <h3>Bank:</h3>
+          <p id='bank-address'></p>
+          <p id="bank-balance"></p>
+        </div>
+        <div class="col-6">
+          <h4>Deposit:</h4>
+        </div>
+        <div class="col-6">
+          <form id="depositForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input name="amount" class="form-control" type="number" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-deposit mt-3">Deposit</button>
+          </form>
+        </div>
+
+        <div class="col-6">
+          <h4>Withdraw:</h4>
+        </div>
+        <div class="col-6">
+          <form id="withdrawForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <button type="button" class="btn btn-primary btn-withdraw mt-3">Withdraw</button>
+          </form>
+        </div>
+
+        <div class="col-6">
+          <h4>Get balance:</h4>
+        </div>
+        <div class="col-6">
+          <form id="getBalanceForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <button type="button" class="btn btn-primary btn-display-balance mt-3">Display balance</button>
+          </form>
+          <p>Balance is :</p>
+        </div>
+
+        <br>
+        <div class="col-6">
+          <h3>Slot:</h3>
+        </div>
+        <div class="col-6">
+          <form id="getBalanceForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input name="amount" class="form-control" type="number" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-bet-slot mt-3">Bet</button>
+          </form>
+          <p>Number is :</p>
+        </div>
+        
+        <br>
+        <div class="col-6">
+          <h3>Roulette:</h3>
+        </div>
+        <div class="col-6">
+          <form id="getBalanceForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Numbers to bet on</label>
+              <input name="amount" class="form-control" placeholder="[0,1,2,...,36]" required>
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input name="amount" class="form-control" type="number" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-bet-roulette mt-3">Bet</button>
+          </form>
+          <p>Number is :</p>
+        </div>
+
+        <br>
+        <div class="col-6">
+          <h3>Bustabit:</h3>
+          <p>See <a href="url">https://www.bustabit.com/help</a> for more informations on how to play the game.</p>
+        </div>
+        <div class="col-6">
+          <form id="getBalanceForm" method="post" class="needs-validation">
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input name="address" placeholder="0x..." class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Number guessed (1 to 10)</label>
+              <input name="amount" class="form-control" type="number" required>
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input name="amount" class="form-control" type="number" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-bet-bustabit mt-3">Bet</button>
+          </form>
+          <p>Number is :</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
